@@ -4,6 +4,7 @@ import BusinessSummary from '../BusinessSummary/BusinessSummary';
 import FeaturedProducts from '../FeaturedProducts/FeaturedProducts';
 import Join from '../Join/Join';
 import Offer from '../Offer/Offer';
+import Reviews from '../Reviews/Reviews';
 
 const Home = () => {
     return (
@@ -13,6 +14,7 @@ const Home = () => {
             <BusinessSummary></BusinessSummary>
             <Join></Join>
             <Offer></Offer>
+            <Reviews></Reviews>
         </div>
     );
 };
