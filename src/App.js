@@ -10,6 +10,11 @@ import Login from './Pages/Authentication/Login/Login';
 import NotFound from './Pages/Shared/NotFound/NotFound';
 import Register from './Pages/Authentication/Register/Register';
 import RequireAuth from './Pages/Authentication/RequireAuth/RequireAuth';
+import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
+import MyOrder from './Pages/Dashboard/MyOrder/MyOrder';
+import MyReview from './Pages/Dashboard/MyReview/MyReview';
+import MyProfile from './Pages/Dashboard/MyProfile/MyProfile';
+import AddTool from './Pages/Dashboard/AddTool/AddTool';
 
 function App() {
   return (
@@ -20,7 +25,15 @@ function App() {
       <Route path="/allProducts" element={<RequireAuth>
         <Products></Products>
       </RequireAuth>} />
-      <Route path="/dashboard" element={<Home></Home>} />
+      <Route path="/dashboard" element={<RequireAuth>
+        <Dashboard></Dashboard>
+      </RequireAuth>}>
+      <Route index element={<MyOrder></MyOrder>} />
+           <Route path='myReview' element={<MyReview></MyReview>} />
+           <Route path='myProfile' element={<MyProfile></MyProfile>} />
+           <Route path='addTool' element={<AddTool></AddTool>} />
+
+      </Route>
       <Route path="/blog" element={<Home></Home>} />
       <Route path="/revivew" element={<Home></Home>} />
       <Route path="/about" element={<Home></Home>} />

@@ -1,9 +1,20 @@
 import React from 'react';
 
-const Product = () => {
+const Product = ({tool}) => {
+    const {name, availableQuantity, minimumQuantity, price, picture, description} = tool;
     return (
-        <div>
-            <h2>Here is Single Product</h2>
+<div className="card w-96 bg-base-100 shadow-xl">
+            <figure><img className='w-full' src={picture} alt="Shoes" /></figure>
+            <div className="card-body font-bold">
+                <h2 className="card-title text-primary text-center">{name}</h2>
+                <p className='text-secondary font-black'>Price: {price} per unit</p>
+                <p>Available: {availableQuantity}</p>
+                <p>Minimum Quantity: {minimumQuantity}</p>
+                <p>Description: {description}</p>
+                <div className="card-actions justify-end">
+                    <button className="btn btn-secondary">Buy Now</button>
+                </div>
+            </div>
         </div>
     );
 };

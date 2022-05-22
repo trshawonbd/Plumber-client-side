@@ -49,9 +49,13 @@ const NavBar = () => {
                     }
                 </ul>
             </div>
-            <div className="navbar-end">
-                <a className="btn">Get started</a>
+            {
+                user ?             <div className="navbar-end">
+                <a className="btn">{user?.displayName}</a>
+            </div> : <div className="navbar-end">
+                <a className="btn">Getting Started</a>
             </div>
+            }
         </div>
     );
 };
