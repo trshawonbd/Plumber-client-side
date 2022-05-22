@@ -30,7 +30,7 @@ const Login = () => {
 
       },[user, gUser, from, navigate]) */
       if(gUser || user){
-          navigate('/')
+          navigate(from, { replace: true })
       }
 
       if (loading || gLoading){
@@ -48,7 +48,7 @@ const Login = () => {
     const onSubmit = data => {
         console.log(data);
         signInWithEmailAndPassword(data.email, data.password)
-        navigate('/')
+        navigate('/allProducts')
     }
     
     return (
