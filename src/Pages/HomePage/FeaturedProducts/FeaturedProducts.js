@@ -10,9 +10,9 @@ const FeaturedProducts = () => {
             .then(data => setTools(data));
     }, [])
     return (
-        <div className='mx-12'>
+        <div>
             <h2 className='text-center text-5xl font-black my-16'>Featured Products: {tools.length}</h2>
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+            <div class="grid grid-cols-1 justify-items-center lg:grid-cols-3 gap-5">
 
             {
                 tools.map(tool => <FeaturedSingle
