@@ -8,6 +8,7 @@ const NavBar = () => {
         <li className='font-bold'><Link to="/">Home</Link></li>
         <li className='font-bold'><Link to="/allProducts">All Products</Link></li>
         <li className='font-bold'><Link to="/dashboard">Dashboard</Link></li>
+        <li className='font-bold'><Link to="/blog">Blog</Link></li>
         <li className='font-bold'><Link to="/review">Review</Link></li>
         <li className='font-bold'><Link to="/about">About</Link></li>
         <li className='font-bold'><Link to="/login">Login</Link></li>
@@ -27,7 +28,7 @@ const NavBar = () => {
                         }
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-3xl text-primary">Plumber</a>
+                <a className="btn btn-ghost normal-case text-3xl text-primary  "><span className='uppercase'>Plumber</span> </a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
