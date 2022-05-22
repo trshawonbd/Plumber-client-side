@@ -5,6 +5,9 @@ import 'react-toastify/dist/ReactToastify.css';
 import NavBar from './Pages/Shared/NavBar/NavBar';
 import Home from './Pages/HomePage/Home/Home';
 import { Route, Routes } from 'react-router-dom';
+import Products from './Pages/AllProducts/Products/Products';
+import Login from './Pages/Authentication/Login/Login';
+import NotFound from './Pages/Shared/NotFound/NotFound';
 
 function App() {
   return (
@@ -12,6 +15,14 @@ function App() {
       <NavBar></NavBar>
       <Routes>
       <Route path="/" element={<Home></Home>} />
+      <Route path="/allProducts" element={<Products></Products>} />
+      <Route path="/dashboard" element={<Home></Home>} />
+      <Route path="/blog" element={<Home></Home>} />
+      <Route path="/revivew" element={<Home></Home>} />
+      <Route path="/about" element={<Home></Home>} />
+      <Route path="/login" element={<Login></Login>} />
+      <Route path="/register" element={<Home></Home>} />
+      <Route path="*" element={<NotFound></NotFound>} />
       </Routes>
 
 
