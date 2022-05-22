@@ -10,7 +10,7 @@ const FeaturedSingle = ({tool}) => {
                 <p>Price: {price}</p>
                 <p>Description: {description}</p>
                 <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Buy Now</button>
+                    <button className="btn btn-secondary">Buy Now</button>
                 </div>
             </div>
         </div>
