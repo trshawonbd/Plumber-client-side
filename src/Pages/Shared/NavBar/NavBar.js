@@ -14,7 +14,7 @@ const NavBar = () => {
         signOut(auth);
         /* localStorage.removeItem('accessToken'); */
         navigate('/');
-      };
+    };
 
     const navMenu = <>
         <li className='font-bold'><Link to="/">Home</Link></li>
@@ -23,7 +23,7 @@ const NavBar = () => {
         <li className='font-bold'><Link to="/blog">Blog</Link></li>
         <li className='font-bold'><Link to="/review">Review</Link></li>
         <li className='font-bold'><Link to="/about">About</Link></li>
-        <li className='font-bold'>{user ? <button onClick={logout} class="btn btn-ghost">Sign Out</button> : <Link to = "/login">Login</Link>}</li>
+        <li className='font-bold'>{user ? <button onClick={logout} class="btn btn-ghost">Sign Out</button> : <Link to="/login">Login</Link>}</li>
 
     </>
 
@@ -50,12 +50,19 @@ const NavBar = () => {
                 </ul>
             </div>
             {
-                user ?             <div className="navbar-end">
-                <a className="btn">{user?.displayName}</a>
-            </div> : <div className="navbar-end">
-                <a className="btn">Getting Started</a>
-            </div>
+                user ? <div className="navbar-end">
+                    <a className="btn">{user?.displayName}</a>
+                </div> : <div className="navbar-end">
+                    <a className="btn">Getting Started</a>
+                </div>
             }
+
+            <div className="navbar-end">
+                <label tabindex="1" for="dasboard-sidebar" className="btn btn-ghost lg:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                </label>
+
+            </div>
         </div>
     );
 };

@@ -1,13 +1,16 @@
 import React from 'react';
 
-const FeaturedSingle = ({tool}) => {
-    const {name, price, description, img} = tool;
+const FeaturedSingle = ({ tool }) => {
+    const { name, availableQuantity, minimumQuantity, price, picture, description } = tool;
+
     return (
         <div className="card w-96 bg-base-100 shadow-xl">
-            <figure><img src={img} alt="Shoes" /></figure>
-            <div className="card-body">
-                <h2 className="card-title">{name}</h2>
-                <p>Price: {price}</p>
+            <figure><img className='w-full' src={picture} alt="Shoes" /></figure>
+            <div className="card-body font-bold">
+                <h2 className="card-title text-primary text-center">{name}</h2>
+                <p className='text-secondary font-black'>Price: {price} per unit</p>
+                <p>Available: {availableQuantity}</p>
+                <p>Minimum Quantity: {minimumQuantity}</p>
                 <p>Description: {description}</p>
                 <div className="card-actions justify-end">
                     <button className="btn btn-secondary">Buy Now</button>
