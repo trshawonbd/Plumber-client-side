@@ -1,91 +1,34 @@
 import React from 'react';
+import { useQuery } from 'react-query';
+import Loading from '../../Shared/Loading/Loading';
+import SingleReview from '../SingleReview/SingleReview';
 
 const Reviews = () => {
+    const { isLoading, refetch, data: reviews } = useQuery(['review'], () =>
+     fetch(`http://localhost:5000/review`).then(res =>
+       res.json()
+     )
+   )
+
+   if (isLoading){
+       return <Loading></Loading>
+   }
+
     return (
         <div>
-            <h2 className='text-center text-5xl font-black my-16'>Valuable Reviews</h2>
-            <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-2">
-                <div>
-                    <div class="card card-compact w-96 bg-base-100 shadow-xl">
-                        <div class="avatar mt-5 flex justify-center   ">
-                            <div class="w-24  rounded-full ring ring-secondary ring-offset-base-100 ring-offset-2">
-                                <img src="https://api.lorem.space/image/face?hash=3174" />
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <h2 class="card-title">Shoes!</h2>
-                            <p>If a dog chews shoes whose shoes does he choose?</p>
-                            <div class="card-actions justify-end">
-                                <button class="btn btn-secondary">Buy Now</button>
-                            </div>
-                        </div>
-                    </div>
+            <h2 className='text-center text-5xl font-black my-16'>Valuable Reviews: {reviews.length}</h2>
+            <div class="grid md:grid-cols-1 lg:grid-cols-4 gap-2">
 
-                </div>
-                <div>
-                    <div class="card card-compact w-96 bg-base-100 shadow-xl">
-                        <div class="avatar mt-5 flex justify-center">
-                            <div class="w-24 rounded-full ring ring-secondary ring-offset-base-100 ring-offset-2">
-                                <img src="https://api.lorem.space/image/face?hash=3174" />
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <h2 class="card-title">Shoes!</h2>
-                            <p>If a dog chews shoes whose shoes does he choose?</p>
-                            <div class="card-actions justify-end">
-                                <button class="btn btn-secondary">Buy Now</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="card card-compact w-96 bg-base-100 shadow-xl">
-                        <div class="avatar mt-5 flex justify-center">
-                            <div class="w-24 rounded-full ring ring-secondary ring-offset-base-100 ring-offset-2">
-                                <img src="https://api.lorem.space/image/face?hash=3174" />
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <h2 class="card-title">Shoes!</h2>
-                            <p>If a dog chews shoes whose shoes does he choose?</p>
-                            <div class="card-actions justify-end">
-                                <button class="btn btn-secondary">Buy Now</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="card card-compact w-96 bg-base-100 shadow-xl">
-                        <div class="avatar mt-5 flex justify-center">
-                            <div class="w-24 rounded-full ring ring-secondary ring-offset-base-100 ring-offset-2">
-                                <img src="https://api.lorem.space/image/face?hash=3174" />
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <h2 class="card-title">Shoes!</h2>
-                            <p>If a dog chews shoes whose shoes does he choose?</p>
-                            <div class="card-actions justify-end">
-                                <button class="btn btn-secondary">Buy Now</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="card card-compact w-96 bg-base-100 shadow-xl">
-                        <div class="avatar mt-5 flex justify-center">
-                            <div class="w-24 rounded-full ring ring-secondary ring-offset-base-100 ring-offset-2">
-                                <img src="https://api.lorem.space/image/face?hash=3174" />
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <h2 class="card-title">Shoes!</h2>
-                            <p>If a dog chews shoes whose shoes does he choose?</p>
-                            <div class="card-actions justify-end">
-                                <button class="btn btn-secondary">Buy Now</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {
+                    reviews.map(review => <SingleReview
+                    key={review._id}
+                    reviewItem = {review}
+                    refetch = {refetch}
+                    >
+
+                    </SingleReview>)
+                }
+
             </div>
         </div>
     );
