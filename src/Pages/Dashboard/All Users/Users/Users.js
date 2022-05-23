@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import Loading from '../../../Shared/Loading/Loading';
+import DeleteModal from '../DeleteModal/DeleteModal';
 import SingleUser from '../SingleUser/SingleUser';
 
 const Users = () => {
+    const [deleting, setDeleting] = useState(null);
     const { isLoading, refetch, data: users } = useQuery(['users'], () =>
      fetch(`http://localhost:5000/user`,
      {
@@ -44,6 +46,7 @@ const Users = () => {
                             index={index}
                             user = {user}
                             refetch ={refetch}
+                            setDeleting = {setDeleting}
                             ></SingleUser>)
                         }
 
@@ -51,6 +54,13 @@ const Users = () => {
                     </tbody>
                 </table>
             </div>
+            {
+                deleting && <DeleteModal
+                deleting={deleting}
+                refetch={refetch}
+                setDeleting = {setDeleting}
+                ></DeleteModal>
+            }
         </div>
     );
 };
