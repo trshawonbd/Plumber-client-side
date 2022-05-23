@@ -16,6 +16,7 @@ import MyReview from './Pages/Dashboard/MyReview/MyReview';
 import MyProfile from './Pages/Dashboard/MyProfile/MyProfile';
 import AddTool from './Pages/Dashboard/AddTool/AddTool';
 import SingleTool from './Pages/HomePage/SingleTool/SingleTool';
+import Users from './Pages/Dashboard/All Users/Users/Users';
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
            <Route path='myReview' element={<MyReview></MyReview>} />
            <Route path='myProfile' element={<MyProfile></MyProfile>} />
            <Route path='addTool' element={<AddTool></AddTool>} />
+           <Route path='allUsers' element={<Users></Users>} />
 
       </Route>
       <Route path="/blog" element={<Home></Home>} />
