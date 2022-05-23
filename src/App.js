@@ -15,6 +15,7 @@ import MyOrder from './Pages/Dashboard/MyOrder/MyOrder';
 import MyReview from './Pages/Dashboard/MyReview/MyReview';
 import MyProfile from './Pages/Dashboard/MyProfile/MyProfile';
 import AddTool from './Pages/Dashboard/AddTool/AddTool';
+import SingleTool from './Pages/HomePage/SingleTool/SingleTool';
 
 function App() {
   return (
@@ -22,7 +23,11 @@ function App() {
       <NavBar></NavBar>
       <Routes>
       <Route path="/" element={<Home></Home>} />
+      <Route path="/singleTool/:id" element={<SingleTool></SingleTool>} />
       <Route path="/allProducts" element={<RequireAuth>
+        <Products></Products>
+      </RequireAuth>} />
+      <Route path="/allProducts/:id" element={<RequireAuth>
         <Products></Products>
       </RequireAuth>} />
       <Route path="/dashboard" element={<RequireAuth>

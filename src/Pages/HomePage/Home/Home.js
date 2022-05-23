@@ -1,4 +1,5 @@
 import React from 'react';
+import Products from '../../AllProducts/Products/Products';
 import Banner from '../Banner/Banner';
 import BusinessSummary from '../BusinessSummary/BusinessSummary';
 import FeaturedProducts from '../FeaturedProducts/FeaturedProducts';
@@ -7,10 +8,12 @@ import Offer from '../Offer/Offer';
 import Reviews from '../Reviews/Reviews';
 
 const Home = () => {
+    
     return (
         <div>
             <Banner></Banner>
             <FeaturedProducts></FeaturedProducts>
+            
             <BusinessSummary></BusinessSummary>
             <Join></Join>
             <Offer></Offer>

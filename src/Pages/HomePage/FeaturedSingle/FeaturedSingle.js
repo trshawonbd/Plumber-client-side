@@ -1,7 +1,8 @@
 import React from 'react';
 
-const FeaturedSingle = ({ tool }) => {
-    const { name, availableQuantity, minimumQuantity, price, picture, description } = tool;
+const FeaturedSingle = ({ tool, handleBuy }) => {
+    console.log(handleBuy)
+    const {_id, name, availableQuantity, minimumQuantity, price, picture, description } = tool;
 
     return (
         <div className="card w-96 bg-base-100 shadow-xl">
@@ -13,7 +14,7 @@ const FeaturedSingle = ({ tool }) => {
                 <p>Minimum Quantity: {minimumQuantity}</p>
                 <p>Description: {description}</p>
                 <div className="card-actions justify-end">
-                    <button className="btn btn-secondary">Buy Now</button>
+                    <button onClick={() => handleBuy(_id)} className="btn btn-secondary">Buy Now</button>
                 </div>
             </div>
         </div>

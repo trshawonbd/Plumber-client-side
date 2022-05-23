@@ -1,10 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import { useQuery } from 'react-query';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, } from 'react-router-dom';
 import Loading from '../../Shared/Loading/Loading';
 import FeaturedSingle from '../FeaturedSingle/FeaturedSingle';
 
 const FeaturedProducts = () => {
+    
+    const navigate = useNavigate();
+
+    const handleBuy = id =>{
+        const url= `http://localhost:5000/tool/${id}`;
+        fetch(url)
+        .then(res => res.json())
+        .then(data => {
+           
+            navigate(`/singleTool/${id}`);
+        })
+    }
+
     const { isLoading, refetch, data: tools } = useQuery(['tool'], () =>
      fetch(`http://localhost:5000/tool`).then(res =>
        res.json()
@@ -28,6 +41,7 @@ const FeaturedProducts = () => {
                     key={tool._id}
                     tool={tool}
                     refetch={refetch}
+                    handleBuy = {handleBuy}
                 >
                 </FeaturedSingle>)
             }
