@@ -6,12 +6,17 @@ import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../../../firebase.init';
 import Loading from '../../../Shared/Loading/Loading';
+import DeleteModalForAdmin from '../DeleteModalForAdmin/DeleteModalForAdmin';
 
 const AllOrders = () => {
 
     const [user] = useAuthState(auth);
+    const [deleting, setDeleting] = useState(null);
 
     const navigate = useNavigate();
+
+
+
     const { isLoading, refetch, data: orders } = useQuery(['orders'], () =>
      fetch(`http://localhost:5000/allOrder`,
      {
@@ -29,6 +34,7 @@ const AllOrders = () => {
    if (isLoading){
        return <Loading></Loading>
    }
+    
 
     const handleStatus = (id) =>{
         const url = `http://localhost:5000/booked/${id}`;
@@ -92,7 +98,7 @@ const AllOrders = () => {
                             
                             </td>
                             { ( !order.paid) && 
-                                <td><button  className='btn btn-xs btn-secondary'>Delete</button></td> 
+                                <td><label onClick={() => setDeleting(order)} for="confirm-modal" class="btn btn-error btn-xs">Delete</label></td> 
                             }
                         </tr>)
                     }
@@ -100,6 +106,14 @@ const AllOrders = () => {
 
                 </tbody>
             </table>
+            {
+                deleting && <DeleteModalForAdmin
+                deleting={deleting}
+                refetch={refetch}
+                setDeleting = {setDeleting}
+                orders ={orders}
+                ></DeleteModalForAdmin>
+            }
         </div>
 
     );
