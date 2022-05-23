@@ -18,6 +18,7 @@ import AddTool from './Pages/Dashboard/AddTool/AddTool';
 import SingleTool from './Pages/HomePage/SingleTool/SingleTool';
 import Users from './Pages/Dashboard/All Users/Users/Users';
 import Payment from './Pages/Dashboard/Payment/Payment/Payment';
+import AllOrders from './Pages/Dashboard/AllOrders/AllOrders/AllOrders';
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
            <Route path='myOrder' element={<MyOrder></MyOrder>} />
            <Route path='addTool' element={<AddTool></AddTool>} />
            <Route path='allUsers' element={<Users></Users>} />
+           <Route path='allOrder' element={<AllOrders></AllOrders>} />
            <Route path='payment/:id' element={<Payment></Payment>} />
 
       </Route>

@@ -28,8 +28,8 @@ const Payment = () => {
 
 
     return (
-        <div className=''>
-            <div class="card w-50 max-w-md bg-base-100 shadow-xl my-12">
+        <div className='flex justify-center flex-col items-center'>
+            <div class="card w-full max-w-md bg-base-100 shadow-xl my-12">
                 <div class="card-body">
                     <p className="text-success font-bold">Hello, {booked.userName}</p>
                     <h2 class="card-title">Please Pay for {booked.name}</h2>
@@ -37,7 +37,7 @@ const Payment = () => {
                     <p>Please pay: ${booked.total}</p>
                 </div>
             </div>
-            <div class="card flex-shrink-0 w-50 max-w-md shadow-2xl bg-base-100">
+            <div class="card  w-full max-w-md shadow-2xl bg-base-100">
                 <div class="card-body">
                     <Elements stripe={stripePromise}>
                         <CheckoutForm
