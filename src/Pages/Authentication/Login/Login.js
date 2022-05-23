@@ -5,6 +5,7 @@ import auth from '../../../firebase.init';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import Loading from '../../Shared/Loading/Loading';
+import useToken from '../../../hooks/useToken';
 
 const Login = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -21,17 +22,15 @@ const Login = () => {
       let location = useLocation();
     
       let from = location.state?.from?.pathname || "/";
-      /* const [token] = useToken(user || gUser); */
+       const [token] = useToken(user || gUser); 
 
-/*       useEffect(() => {
-        if (user || gUser ) {
-            navigate('/');
-        }
-
-      },[user, gUser, from, navigate]) */
-      if(gUser || user){
+       useEffect(() => {
+      if(token){
           navigate(from, { replace: true })
       }
+
+      },[token, from, navigate]) 
+
 
       if (loading || gLoading){
           return <Loading></Loading>

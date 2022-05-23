@@ -55,6 +55,7 @@ const SingleTool = () => {
                 quantity : quantity, 
                 availableQuantity: availableQuantity,
                 total: total,
+                status: 'pending',
             }
             console.log(bookedTool);
 
