@@ -1,17 +1,50 @@
 import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useQuery } from 'react-query';
 import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../../../firebase.init';
+import Loading from '../../Shared/Loading/Loading';
+import DeleteModalForUser from './MyOrderDelete/DeleteModalForUser/DeleteModalForUser';
 
 const MyOrder = () => {
-    const [orders, setOrders] = useState([]);
+    /* const [orders, setOrders] = useState([]); */
     const [user] = useAuthState(auth);
+    const [deleting, setDeleting] = useState(null);
 
     const navigate = useNavigate();
 
-    useEffect(() => {
-        if (user) {
+ 
+
+    const { isLoading, refetch, data: orders } = useQuery(['orders', user, navigate], () =>
+    
+        fetch(`http://localhost:5000/booked?email=${user.email}`, {
+            method: 'GET',
+             headers: {
+                'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+            } 
+        })
+            .then(res => {
+                 if (res.status === 401 || res.status === 403) {
+                    signOut(auth);
+                    localStorage.removeItem('accessToken');
+                    navigate('/');
+
+                } 
+
+                return res.json()
+            })
+
+    
+    )
+
+   if (isLoading){
+       return <Loading></Loading>
+   }
+
+ /*    useEffect(() => {
+         if (user) {
             fetch(`http://localhost:5000/booked?email=${user.email}`, {
                 method: 'GET',
                  headers: {
@@ -31,8 +64,8 @@ const MyOrder = () => {
                 .then(data => {
                     setOrders(data)
                 });
-        }
-    }, [user, navigate])
+        } 
+    }, [user, navigate])  */
     return (
         <div class="overflow-x-auto">
             <table class="table w-full">
@@ -70,7 +103,7 @@ const MyOrder = () => {
                             
                             </td>
                             { ( !order.paid) && 
-                                <td><button  className='btn btn-xs btn-secondary'>Delete</button></td> 
+                                <td><label onClick={() => setDeleting(order)} for="confirm-modal" class="btn btn-error btn-xs">Delete</label></td> 
                             }
                         </tr>)
                     }
@@ -78,6 +111,15 @@ const MyOrder = () => {
 
                 </tbody>
             </table>
+
+            {
+                deleting && <DeleteModalForUser
+                deleting={deleting}
+                refetch={refetch}
+                setDeleting = {setDeleting}
+                orders ={orders}
+                ></DeleteModalForUser>
+            }
         </div>
 
     );
