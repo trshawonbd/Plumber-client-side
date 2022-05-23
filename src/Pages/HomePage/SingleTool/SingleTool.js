@@ -15,7 +15,7 @@ const SingleTool = () => {
 
     const url = `http://localhost:5000/tool/${id}`;
 
-    const { data: serviceDetail, isLoading } = useQuery(['details', id], () => fetch(url, {
+    const { data: serviceDetail, isLoading, refetch } = useQuery(['details', id], () => fetch(url, {
         method: 'GET',
         /*         headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -26,7 +26,7 @@ const SingleTool = () => {
         return <Loading></Loading>
     }
 
-    const { name, availableQuantity, minimumQuantity, price, picture, description } = serviceDetail;
+    const {_id, name, availableQuantity, minimumQuantity, price, picture, description } = serviceDetail;
     console.log(parseInt(availableQuantity), parseInt(minimumQuantity))
 
     const handlePurchase = event =>{
@@ -45,6 +45,7 @@ const SingleTool = () => {
         if ((minimumQuantityInInt <= quantityInInt) && (quantityInInt <= availableQuantityInInt)){
            
             const bookedTool = {
+                id: _id,
                 name: name,
                 price: price,
                 userName: user.displayName,
@@ -52,14 +53,15 @@ const SingleTool = () => {
                 phone: phone,
                 address : address,
                 quantity : quantity, 
-                total: total
+                availableQuantity: availableQuantity,
+                total: total,
             }
             console.log(bookedTool);
 
             const url = `http://localhost:5000/booked`;
 
             fetch(url, {
-                method: 'POST',
+                method: 'PUT',
                 headers: {
                     'content-type': 'application/json'
                 },
@@ -69,20 +71,18 @@ const SingleTool = () => {
                 .then(data => {
                     console.log(data);
                     if (data.success) {
-                        toast(`${name} is booked`)
+                        toast(`${name} is booked`);
+                        refetch();
                     }
                     else {
-                        toast.error(`something went wrong. Please try again`)
-                    }
-                    
-    
+                        toast.error(`something went wrong. Please try again`);
+                        refetch();
+                    }   
                 })
-
-
-
         }
         else{
-            toast(`Your quantity must be less than ${availableQuantity} and more than ${minimumQuantity} `)
+            toast(`Your quantity must be less than ${availableQuantity} and more than ${minimumQuantity} `);
+            refetch();
         }
 
         
@@ -129,7 +129,7 @@ const SingleTool = () => {
                         <label class="label">
                             <span class="label-text">Quantity</span>
                         </label>
-                        <input type="number" id='quantity' name='quantity' className="input input-bordered w-full max-w-xs text-lg font-bold" required />
+                        <input type="number" id='quantity' name='quantity' placeholder='' className="input input-bordered w-full max-w-xs text-lg font-bold" required />
                     </div>
                     <div class="form-control w-full max-w-xs">
                         <label class="label">
@@ -137,12 +137,12 @@ const SingleTool = () => {
                         </label>
                         <input type="number" id='price' name='price' disabled value={price} className="input input-bordered w-full max-w-xs text-lg font-bold" />
                     </div>
-{/*                     <div class="form-control w-full max-w-xs">
+                     <div class="form-control w-full max-w-xs">
                         <label class="label">
-                            <span class="label-text">Total</span>
+                            <span class="label-text">Available</span>
                         </label>
-                        <input type="text" disabled  value={total} className="input input-bordered w-full max-w-xs text-lg font-bold" />
-                    </div> */}
+                        <input type="text" disabled  value={availableQuantity} className="input input-bordered w-full max-w-xs text-lg font-bold" />
+                    </div> 
                     <input type="submit" value="Purchase" className="btn btn-primary w-full max-w-xs text-lg font-bold" />
                 </form>
             </div>
