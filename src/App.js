@@ -21,6 +21,8 @@ import Payment from './Pages/Dashboard/Payment/Payment/Payment';
 import AllOrders from './Pages/Dashboard/AllOrders/AllOrders/AllOrders';
 import ManageProducts from './Pages/Dashboard/ManageAllProducts/ManageProducts/ManageProducts';
 import Footer from './Pages/Shared/Footer/Footer';
+import Blog from './Pages/Blog/Blog';
+import MyPortfolio from './Pages/MyPortfolio/MyPortfolio';
 
 function App() {
   return (
@@ -51,9 +53,9 @@ function App() {
            <Route path='payment/:id' element={<Payment></Payment>} />
 
       </Route>
-      <Route path="/blog" element={<Home></Home>} />
-      <Route path="/revivew" element={<Home></Home>} />
-      <Route path="/about" element={<Home></Home>} />
+      <Route path="/blog" element={<Blog></Blog>} />
+      
+      <Route path="/about" element={<MyPortfolio></MyPortfolio>} />
       <Route path="/login" element={<Login></Login>} />
       <Route path="/register" element={<Register></Register>} />
       <Route path="*" element={<NotFound></NotFound>} />

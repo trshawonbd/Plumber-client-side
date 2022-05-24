@@ -85,7 +85,7 @@ const SingleTool = () => {
                 })
         }
         else{
-            toast(`Your quantity must be less than ${availableQuantity} and more than ${minimumQuantity} `);
+            toast.error(`Your quantity must be less than ${availableQuantity} and more than ${minimumQuantity} `);
             refetch();
         }
 
@@ -94,9 +94,9 @@ const SingleTool = () => {
 
 
     return (
-        <div class="card m-12 w-100  lg:card-side bg-base-100 ">
-            <figure className='bg-primary'><img className='w-96 ' src={picture} alt="Album" /></figure>
-            <div class="card-body bg-secondary lg:w-1/3">
+        <div class="card m-12 w-100  lg:card-side bg-purple-100 ">
+            <figure className=''><img className='w-96 ' src={picture} alt="Album" /></figure>
+            <div class="card-body  lg:w-1/3">
                 <h2 className="card-title text-primary justify-center mb-6 text-3xl">Purchase Information</h2>
                 <form  onSubmit={handlePurchase}  className='grid grid-cols-1 gap-4 justify-items-center'>
                     <div class="form-control w-full max-w-xs">
@@ -150,9 +150,9 @@ const SingleTool = () => {
                     <input disabled = {(disable) }  type="submit" value="Purchase" className="btn btn-primary w-full max-w-xs text-lg font-bold" />
                 </form>
             </div>
-            <div class="card-body bg-primary lg:w-1/3 grow-0 items-center">
+            <div class="card-body  lg:w-1/3 grow-0 items-center">
                 <h2 className="card-title text-accent text-3xl">{name}</h2>
-                <p className='text-secondary text-2xl font-black'>Price: {price} per unit</p>
+                <p className='text-primary text-2xl font-black'>Price: {price} per unit</p>
                 <p className='text-accent text-2xl font-bold'>Available: {availableQuantity}</p>
                 <p className='text-accent text-2xl font-bold'>Minimum Quantity: {minimumQuantity}</p>
                 <p className='text-accent text-2xl font-bold'>Description: {description}</p>

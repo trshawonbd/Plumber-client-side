@@ -1,5 +1,9 @@
 module.exports = {
-  content: ["./src/**/*.{html,js}"],
+  content: ["./src/**/*.{html,js}",
+  
+],
+
+  
   theme: {
     extend: {},
   },
@@ -18,5 +22,8 @@ module.exports = {
       
     ],
   },
-  plugins: [require("daisyui")],
+  plugins: [require("daisyui"),
+  
+
+],
 }
