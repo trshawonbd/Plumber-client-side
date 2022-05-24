@@ -20,6 +20,7 @@ import Users from './Pages/Dashboard/All Users/Users/Users';
 import Payment from './Pages/Dashboard/Payment/Payment/Payment';
 import AllOrders from './Pages/Dashboard/AllOrders/AllOrders/AllOrders';
 import ManageProducts from './Pages/Dashboard/ManageAllProducts/ManageProducts/ManageProducts';
+import Footer from './Pages/Shared/Footer/Footer';
 
 function App() {
   return (
@@ -57,6 +58,8 @@ function App() {
       <Route path="/register" element={<Register></Register>} />
       <Route path="*" element={<NotFound></NotFound>} />
       </Routes>
+
+      <Footer></Footer>
 
 
 

@@ -17,7 +17,7 @@ const Reviews = () => {
     return (
         <div>
             <h2 className='text-center text-5xl font-black my-16'>Valuable Reviews: {reviews.length}</h2>
-            <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
+            <div class="grid sm:grid-cols-1  md:grid-cols-2 lg:grid-cols-4 gap-2">
 
                 {
                     reviews.map(review => <SingleReview

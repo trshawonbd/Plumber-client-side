@@ -8,6 +8,8 @@ import Loading from '../../Shared/Loading/Loading';
 
 const SingleTool = () => {
 
+    const [disable, setDisable] = useState(false);
+
     const param = useParams();
     const { id } = param;
 
@@ -41,6 +43,7 @@ const SingleTool = () => {
         const minimumQuantityInInt = parseInt(minimumQuantity);
         const total = quantityInInt * price;
         event.target.reset();
+        
 
         if ((minimumQuantityInInt <= quantityInInt) && (quantityInInt <= availableQuantityInInt)){
            
@@ -144,7 +147,7 @@ const SingleTool = () => {
                         </label>
                         <input type="text" disabled  value={availableQuantity} className="input input-bordered w-full max-w-xs text-lg font-bold" />
                     </div> 
-                    <input type="submit" value="Purchase" className="btn btn-primary w-full max-w-xs text-lg font-bold" />
+                    <input disabled = {(disable) }  type="submit" value="Purchase" className="btn btn-primary w-full max-w-xs text-lg font-bold" />
                 </form>
             </div>
             <div class="card-body bg-primary lg:w-1/3 grow-0 items-center">
