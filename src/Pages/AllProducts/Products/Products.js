@@ -1,10 +1,23 @@
 import React from 'react';
 import { useQuery } from 'react-query';
+import { useNavigate } from 'react-router-dom';
 import Loading from '../../Shared/Loading/Loading';
 import Product from '../Product/Product';
 import './Products.css';
 
 const Products = () => {
+    const navigate = useNavigate();
+
+    const handleBuy = id =>{
+        const url= `http://localhost:5000/tool/${id}`;
+        fetch(url)
+        .then(res => res.json())
+        .then(data => {
+           
+            navigate(`/singleTool/${id}`);
+        })
+    }
+
     const { isLoading, refetch, data: tools } = useQuery(['tool'], () =>
      fetch(`http://localhost:5000/tool`).then(res =>
        res.json()
@@ -24,6 +37,7 @@ const Products = () => {
                     key={tool._id}
                     tool={tool}
                     refetch= {refetch}
+                    handleBuy = {handleBuy}
                 >
                 </Product>)
             }

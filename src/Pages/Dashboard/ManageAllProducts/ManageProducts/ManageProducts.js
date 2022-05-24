@@ -1,53 +1,52 @@
 import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import Loading from '../../../Shared/Loading/Loading';
-import DeleteModal from '../DeleteModal/DeleteModal';
-import SingleUser from '../SingleUser/SingleUser';
+import ManageDeleteModal from '../ManageDeleteModal/ManageDeleteModal';
+import ManageSingleProduct from '../ManageSingleProduct/ManageSingleProduct';
 
-const Users = () => {
+const ManageProducts = () => {
     const [deleting, setDeleting] = useState(null);
-    const { isLoading, refetch, data: users } = useQuery(['users'], () =>
-        fetch(`http://localhost:5000/user`,
-            {
-                method: 'GET',
-                headers: {
-                    'authorization': `Bearer ${localStorage.getItem('accessToken')}`
-                }
-            })
-            .then(res =>
-                res.json()
-            )
 
+    
+
+    const { isLoading, refetch, data: tools } = useQuery(['tool'], () =>
+        fetch(`http://localhost:5000/tool`).then(res =>
+            res.json()
+        )
     )
 
     if (isLoading) {
         return <Loading></Loading>
     }
-
     return (
         <div>
-            <h2 className='text-2xl'>Users: {users.length}</h2>
+            <h2 className='text-center text-3xl font-bold my-12'>Manage All Products: {tools.length}</h2>
+
+
             <div class="overflow-x-auto">
                 <table class="table w-full">
 
+
                     <thead>
                         <tr>
-                            <th></th>
-                            <th>Email</th>
-                            <th>Role</th>
-                            <th>Remove User</th>
+                            <th>No.</th>
+                            <th>Image</th>
+                            <th>Name</th>
+                            <th>Availability</th>
+                            <th>Price</th>
+                            <th>Action</th>
 
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            users?.map((user, index) => <SingleUser
+                            tools?.map((tool, index) => <ManageSingleProduct
                                 key={index}
                                 index={index}
-                                user={user}
+                                tool={tool}
                                 refetch={refetch}
                                 setDeleting={setDeleting}
-                            ></SingleUser>)
+                            ></ManageSingleProduct>)
                         }
 
 
@@ -55,14 +54,16 @@ const Users = () => {
                 </table>
             </div>
             {
-                deleting && <DeleteModal
+                deleting && <ManageDeleteModal
                     deleting={deleting}
                     refetch={refetch}
                     setDeleting={setDeleting}
-                ></DeleteModal>
+                ></ManageDeleteModal>
             }
+
+
         </div>
     );
 };
 
-export default Users;
+export default ManageProducts;

@@ -19,6 +19,7 @@ import SingleTool from './Pages/HomePage/SingleTool/SingleTool';
 import Users from './Pages/Dashboard/All Users/Users/Users';
 import Payment from './Pages/Dashboard/Payment/Payment/Payment';
 import AllOrders from './Pages/Dashboard/AllOrders/AllOrders/AllOrders';
+import ManageProducts from './Pages/Dashboard/ManageAllProducts/ManageProducts/ManageProducts';
 
 function App() {
   return (
@@ -26,7 +27,10 @@ function App() {
       <NavBar></NavBar>
       <Routes>
       <Route path="/" element={<Home></Home>} />
-      <Route path="/singleTool/:id" element={<SingleTool></SingleTool>} />
+      <Route path="/singleTool/:id" element={<RequireAuth>
+
+        <SingleTool></SingleTool>
+      </RequireAuth>} />
       <Route path="/allProducts" element={<RequireAuth>
         <Products></Products>
       </RequireAuth>} />
@@ -42,6 +46,7 @@ function App() {
            <Route path='addTool' element={<AddTool></AddTool>} />
            <Route path='allUsers' element={<Users></Users>} />
            <Route path='allOrder' element={<AllOrders></AllOrders>} />
+           <Route path='manageProducts' element={<ManageProducts></ManageProducts>} />
            <Route path='payment/:id' element={<Payment></Payment>} />
 
       </Route>

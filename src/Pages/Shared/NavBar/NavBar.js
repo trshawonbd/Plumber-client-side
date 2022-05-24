@@ -25,7 +25,7 @@ const NavBar = () => {
         <li className='font-bold'><Link to="/blog">Blog</Link></li>
         <li className='font-bold'><Link to="/review">Review</Link></li>
         <li className='font-bold'><Link to="/about">About</Link></li>
-        <li className='font-bold'>{user ? <button onClick={logout} class="btn btn-ghost">Sign Out</button> : <Link to="/login">Login</Link>}</li>
+        <li className='font-bold'>{user ? <button onClick={logout} class="btn btn-ghost text-lg ">Sign Out</button> : <Link to="/login">Login</Link>}</li>
 
     </>
 

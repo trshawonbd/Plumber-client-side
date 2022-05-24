@@ -7,7 +7,7 @@ const DeleteModal = ({deleting, refetch, setDeleting}) => {
     console.log("deleting", deleting)
 
     const handleDelete = () => {
-        fetch(`http://localhost:5000/user/${email}`, {
+        fetch(`http://localhost:5000/admin/user/${email}`, {
             method: "DELETE",
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

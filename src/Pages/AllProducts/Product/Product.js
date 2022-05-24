@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Product = ({tool}) => {
-    const {name, availableQuantity, minimumQuantity, price, picture, description} = tool;
+const Product = ({tool, handleBuy}) => {
+    const {_id, name, availableQuantity, minimumQuantity, price, picture, description} = tool;
     return (
 <div className="card w-96 bg-base-100 shadow-xl">
             <figure><img className='w-full' src={picture} alt="Shoes" /></figure>
@@ -12,7 +12,7 @@ const Product = ({tool}) => {
                 <p>Minimum Quantity: {minimumQuantity}</p>
                 <p>Description: {description}</p>
                 <div className="card-actions justify-end">
-                    <button className="btn btn-secondary">Buy Now</button>
+                    <button onClick={() => handleBuy(_id)} className="btn btn-secondary">Buy Now</button>
                 </div>
             </div>
         </div>
