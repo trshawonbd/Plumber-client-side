@@ -40,5 +40,32 @@
         "price": "300",
         "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa",
         "img": "https://i.ibb.co/zJy5ZDd/6.jpg"
-    }
+    },
+
+
+
+    
+        {
+            
+            "name": "shawon",
+            "email": "trshawonbd@gmail.com",
+            "education": "Masters",
+            "city":"Tallinn",
+            "Location":"tedre",
+            "phone": "+37253920495",
+            "linkedIn":"https://www.linkedin.com/in/taibur-shawon-0497b5127/",
+            "img": "https://i.ibb.co/zJy5ZDd/6.jpg"
+        },
+        {
+            
+            "name": "virat",
+            "email": "virat@kohli.com",
+            "education": "Phd",
+            "city":"Tallinn",
+            "Location":"siidisaba",
+            "phone": "+37253920495",
+            "linkedIn":"https://www.linkedin.com/in/taibur-shawon-0497b5127/",
+            "img": "https://i.ibb.co/zJy5ZDd/6.jpg"
+        }
+    
 ]
