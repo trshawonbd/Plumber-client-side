@@ -36,3 +36,15 @@ On the Othere Hand Admin Panel is also developed for this manufacturing company.
 - Admin can make another user admin or delete the user.
 - Admin can update his/her profile (can add image, education, address,        location, linkedIn ID, phone no etc.) in the `My profile` page in dashboard.
 
+
+
+
+### `Backend Features`
+
+- JWT(JsonWebToken is implemented)
+- Stripe backend technology implemented
+- Admin Middleware is created
+- `POST`, `GET`, `PATCH`, `PUT, `DELETE` method are used 
+- mongodb connection establised
+- `dotenv` is used 
+
