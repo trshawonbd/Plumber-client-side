@@ -53,7 +53,7 @@ const Login = () => {
     return (
         <div>
             <div className='flex h-screen justify-center items-center'>
-                <div className="card w-96 bg-base-100 shadow-xl">
+                <div className="card w-96 bg-base-100 shadow-2xl">
                     <div className="card-body">
                         <h2 className="text-center text-2xl font-bold">Login</h2>
                         <form  onSubmit={handleSubmit(onSubmit)} >
@@ -106,7 +106,7 @@ const Login = () => {
                                 </label>
                             </div>
                             {/* {SignInErrorMessage} */}
-                            <input className='btn w-full max-w-xs  text-white' type="submit" value='Login' />
+                            <input className='btn w-full max-w-xs btn-primary  ' type="submit" value='Login' />
                         </form>
                         <p><small>New to Plumber? <Link className='text-primary font-bold' to='/register'>Create New Account</Link></small></p>
                         <div className="divider">OR</div>

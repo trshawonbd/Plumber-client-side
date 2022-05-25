@@ -77,7 +77,7 @@ const SingleTool = () => {
                 .then(data => {
                     console.log(data);
                     if (data.success) {
-                        toast(`${name} is booked`);
+                        toast.success(`${name} is booked`);
                         refetch();
                         navigate('/dashboard/myOrder')
 

@@ -5,7 +5,7 @@ const FeaturedSingle = ({ tool, handleBuy }) => {
     const {_id, name, availableQuantity, minimumQuantity, price, picture, description } = tool;
 
     return (
-        <div className="card w-full bg-base-100 shadow-xl">
+        <div className="card w-full  shadow-2xl">
             <figure><img className='w-full h-screen' src={picture} alt="Shoes" /></figure><hr />
             <div className="card-body font-bold">
                 <h2 className="card-title text-primary text-center">{name}</h2><hr />

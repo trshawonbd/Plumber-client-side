@@ -68,7 +68,7 @@ const MyOrder = () => {
     }, [user, navigate])  */
     return (
         <div class="overflow-x-auto">
-            <table class="table w-full">
+            <table class="table shadow-2xl w-full">
 
                 <thead>
                     <tr>
@@ -84,7 +84,7 @@ const MyOrder = () => {
                 </thead>
                 <tbody>
                     {
-                        orders?.map((order, index) => <tr>
+                        orders?.map((order, index) => <tr className='shadow-2xl'>
                             <th>{index + 1}</th>
                             <td>{order.name}</td>
                             <td>{order.quantity}</td>

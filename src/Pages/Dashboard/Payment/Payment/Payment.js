@@ -29,7 +29,7 @@ const Payment = () => {
 
     return (
         <div className='flex justify-center flex-col items-center'>
-            <div class="card w-full max-w-md bg-base-100 shadow-xl my-12">
+            <div class="card w-full max-w-md bg-base-100 shadow-2xl my-12">
                 <div class="card-body">
                     <p className="text-primary font-bold">Hello, {booked.userName}</p>
                     <h2 class="card-title">Please Pay for {booked.name}</h2>
