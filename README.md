@@ -11,7 +11,9 @@ Open [https://plumber-26cab.web.app/](https://plumber-26cab.web.app/) to view it
 Plumber is a nice-looking Fully  created for the online hardware manufacturing selling tools, pipes, pipe seal, spanners, paintbrushes, tapes, thread seals, non-flammable seals, and wrenches. Well categorized mega menu and advanced search option empower clients to get results without delay. Attractive blogs with active social channels allow clients to get the product and offer details once they launched. Highly upgraded collections and product sorting provide a smooth online shopping feel to your buyers. You also get testimonials, product carousel, banners, payments method and much more. \
 On the Othere Hand Admin Panel is also developed for this manufacturing company. Here, admin can easily set up their products, managing their products, managing orders and able to change order status.
 
-### `npm run build`
+### `Features for Client`
+
+* :love_you_gesture: a
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
