@@ -9,7 +9,7 @@ const Products = () => {
     const navigate = useNavigate();
 
     const handleBuy = id =>{
-        const url= `http://localhost:5000/tool/${id}`;
+        const url= `https://stark-bayou-71570.herokuapp.com/tool/${id}`;
         fetch(url)
         .then(res => res.json())
         .then(data => {
@@ -19,7 +19,7 @@ const Products = () => {
     }
 
     const { isLoading, refetch, data: tools } = useQuery(['tool'], () =>
-     fetch(`http://localhost:5000/tool`).then(res =>
+     fetch(`https://stark-bayou-71570.herokuapp.com/tool`).then(res =>
        res.json()
      )
    )

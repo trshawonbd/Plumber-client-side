@@ -9,7 +9,7 @@ const FeaturedProducts = () => {
     const navigate = useNavigate();
 
     const handleBuy = id =>{
-        const url= `http://localhost:5000/tool/${id}`;
+        const url= `https://stark-bayou-71570.herokuapp.com/tool/${id}`;
         fetch(url)
         .then(res => res.json())
         .then(data => {
@@ -19,7 +19,7 @@ const FeaturedProducts = () => {
     }
 
     const { isLoading, refetch, data: tools } = useQuery(['tool'], () =>
-     fetch(`http://localhost:5000/tool`).then(res =>
+     fetch(`https://stark-bayou-71570.herokuapp.com/tool`).then(res =>
        res.json()
      )
    )
@@ -32,7 +32,7 @@ const FeaturedProducts = () => {
    console.log(shuffled)
     const sliceItems = shuffled.slice(0,4); 
     return (
-        <div>
+        <div className=' mx-4'>
             <h2 className='text-center text-5xl font-black my-16'>Featured Products</h2>
             <div class="grid grid-cols-1 justify-items-center lg:grid-cols-4 gap-5">
 

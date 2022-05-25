@@ -35,7 +35,7 @@ const AddTool = () => {
                 }
 
                 
-                fetch(`http://localhost:5000/tool`,{
+                fetch(`https://stark-bayou-71570.herokuapp.com/tool`,{
                     method: "POST",
                     headers: {
                         'content-type' : 'application/json',

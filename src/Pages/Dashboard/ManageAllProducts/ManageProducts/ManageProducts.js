@@ -10,7 +10,7 @@ const ManageProducts = () => {
     
 
     const { isLoading, refetch, data: tools } = useQuery(['tool'], () =>
-        fetch(`http://localhost:5000/tool`).then(res =>
+        fetch(`https://stark-bayou-71570.herokuapp.com/tool`).then(res =>
             res.json()
         )
     )

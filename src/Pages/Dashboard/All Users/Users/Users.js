@@ -7,7 +7,7 @@ import SingleUser from '../SingleUser/SingleUser';
 const Users = () => {
     const [deleting, setDeleting] = useState(null);
     const { isLoading, refetch, data: users } = useQuery(['users'], () =>
-        fetch(`http://localhost:5000/user`,
+        fetch(`https://stark-bayou-71570.herokuapp.com/user`,
             {
                 method: 'GET',
                 headers: {

@@ -18,7 +18,7 @@ const AllOrders = () => {
 
 
     const { isLoading, refetch, data: orders } = useQuery(['orders'], () =>
-     fetch(`http://localhost:5000/allOrder`,
+     fetch(`https://stark-bayou-71570.herokuapp.com/allOrder`,
      {
         method:'GET',
          headers:{
@@ -37,7 +37,7 @@ const AllOrders = () => {
     
 
     const handleStatus = (id) =>{
-        const url = `http://localhost:5000/booked/${id}`;
+        const url = `https://stark-bayou-71570.herokuapp.com/booked/${id}`;
         console.log(url)
        
         fetch(url, {

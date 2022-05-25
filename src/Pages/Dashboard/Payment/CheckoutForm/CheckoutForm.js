@@ -12,7 +12,7 @@ const CheckoutForm = ({booked}) => {
 
     const {_id, name, price, userName, email,  phone, address , quantity, total} = booked;
     useEffect(()=>{
-        fetch('http://localhost:5000/create-payment-intent', {
+        fetch('https://stark-bayou-71570.herokuapp.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -77,7 +77,7 @@ const CheckoutForm = ({booked}) => {
                 id: _id,
                 transactionId: paymentIntent.id
             }
-            fetch(`http://localhost:5000/booked/${_id}`, {
+            fetch(`https://stark-bayou-71570.herokuapp.com/booked/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',

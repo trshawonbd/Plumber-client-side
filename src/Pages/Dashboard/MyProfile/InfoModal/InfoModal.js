@@ -42,7 +42,7 @@ const InfoModal = ({refetch}) => {
                     picture: img,
                 }
 
-                const url1 =  `http://localhost:5000/user/${email}`
+                const url1 =  `https://stark-bayou-71570.herokuapp.com/user/${email}`
                 console.log(url1)
                 
                 fetch(url1,{

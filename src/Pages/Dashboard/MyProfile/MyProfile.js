@@ -11,7 +11,7 @@ const MyProfile = () => {
     const { email, displayName } = user;
     const firstLetter = displayName.charAt(0);
     const { isLoading, refetch, data: allUsers } = useQuery(['info'], () =>
-        fetch(`http://localhost:5000/user/${email}`,
+        fetch(`https://stark-bayou-71570.herokuapp.com/user/${email}`,
             {
                 method: 'GET',
                 headers: {

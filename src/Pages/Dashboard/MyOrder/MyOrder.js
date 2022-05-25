@@ -19,7 +19,7 @@ const MyOrder = () => {
 
     const { isLoading, refetch, data: orders } = useQuery(['orders', user, navigate], () =>
     
-        fetch(`http://localhost:5000/booked?email=${user.email}`, {
+        fetch(`https://stark-bayou-71570.herokuapp.com/booked?email=${user.email}`, {
             method: 'GET',
              headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -45,7 +45,7 @@ const MyOrder = () => {
 
  /*    useEffect(() => {
          if (user) {
-            fetch(`http://localhost:5000/booked?email=${user.email}`, {
+            fetch(`https://stark-bayou-71570.herokuapp.com/booked?email=${user.email}`, {
                 method: 'GET',
                  headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`

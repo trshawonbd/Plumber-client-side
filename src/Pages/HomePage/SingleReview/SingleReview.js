@@ -4,7 +4,7 @@ const SingleReview = ({reviewItem}) => {
     const {name, ratings, userPicture, review} = reviewItem;
     console.log(reviewItem)
     return (
-        <div>
+
         <div className="card card-compact  bg-base-100 shadow-xl">
             <div className="avatar mt-5 flex justify-center   ">
                 <div className="w-24  rounded-full ring ring-secondary ring-offset-base-100 ring-offset-2">
@@ -18,7 +18,7 @@ const SingleReview = ({reviewItem}) => {
             </div>
         </div>
 
-    </div>
+
     );
 };
 

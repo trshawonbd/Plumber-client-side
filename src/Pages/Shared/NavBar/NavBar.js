@@ -42,7 +42,7 @@ const NavBar = () => {
                         }
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-3xl text-primary"><span className='uppercase'>Plumber</span> </a>
+                <a className="btn btn-ghost normal-case  text-2xl text-primary"><span className='uppercase'><Link to='/'>Plumber</Link></span>  </a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">

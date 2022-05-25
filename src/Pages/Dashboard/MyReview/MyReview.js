@@ -38,7 +38,7 @@ const MyReview = () => {
                 }
                 console.log(tool)
                 
-                fetch(`http://localhost:5000/review`,{
+                fetch(`https://stark-bayou-71570.herokuapp.com/review`,{
                     method: "POST",
                     headers: {
                         'content-type' : 'application/json',

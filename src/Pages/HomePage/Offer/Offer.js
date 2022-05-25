@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import part1 from '../../../assets/offers/part1.jpg';
 import part2 from '../../../assets/offers/part2.jpg';
 import part3 from '../../../assets/offers/part3.jpg';
@@ -6,7 +7,7 @@ import './Offer.css'
 
 const Offer = () => {
     return (
-        <div>
+        <div className='mx-4'>
             <h2 className='text-center text-5xl font-black my-16 '>Special Offer</h2>
             <div className="grid md:grid-flow-row md: gap-y-2  lg:grid-flow-col grid-rows-3 lg:gap-2 ">
                 <div className="row-span-3 ...">
@@ -15,9 +16,9 @@ const Offer = () => {
                         <div className="hero-content text-center text-neutral-content">
                             <div className="max-w-100">
                                 <h1 className="mb-28 text-5xl font-bold">Asset Tools</h1>
-                                <button className=" btn mr-20  btn-secondary">FLAT 35% DISCOUNT</button>
+                                <button  className=" btn mr-20  btn-secondary"><Link to='/allProducts'>FLAT 35% DISCOUNT</Link></button>
 
-                                <button className="mb-28 btn  btn-primary">Shop Now</button>
+                                <button className="mb-28 btn  btn-primary"><Link to='/allProducts'>Shop Now</Link></button>
                             </div>
                         </div>
                     </div>
@@ -27,8 +28,8 @@ const Offer = () => {
                         <div className="hero-overlay bg-opacity-60"></div>
                         <div className="hero-content text-center text-neutral-content">
                             <div className="max-w-lg">
-                                <h1 className="mb-28 text-5xl font-bold">Suprimo’s Kit</h1>
-                                <button className=" btn mb-20  btn-secondary">Modern Tool</button>
+                                <h1 className="mb-28 text-5xl font-bold">Suprimo's Kit</h1>
+                                <button className=" btn mb-20  btn-secondary"><Link to='/allProducts'>Modern Tool</Link> </button>
 
                                
                             </div>
@@ -42,7 +43,7 @@ const Offer = () => {
                             <div className="max-w-lg">
                                 <h1 className="mb-28 text-5xl font-bold">Hand Modern
                                     Equipments</h1>
-                                <button className=" btn mb-20  btn-secondary">Mega Collections</button>
+                                <button className=" btn mb-20  btn-secondary"><Link to='/allProducts'>Mega Collections</Link></button>
 
 
                             </div>

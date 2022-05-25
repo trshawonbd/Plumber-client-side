@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
@@ -9,13 +9,14 @@ import Loading from '../../Shared/Loading/Loading';
 const SingleTool = () => {
 
     const [disable, setDisable] = useState(false);
+    const navigate = useNavigate();
 
     const param = useParams();
     const { id } = param;
 
     const [user, loading, error] = useAuthState(auth);
 
-    const url = `http://localhost:5000/tool/${id}`;
+    const url = `https://stark-bayou-71570.herokuapp.com/tool/${id}`;
 
     const { data: serviceDetail, isLoading, refetch } = useQuery(['details', id], () => fetch(url, {
         method: 'GET',
@@ -62,7 +63,7 @@ const SingleTool = () => {
             }
             console.log(bookedTool);
 
-            const url = `http://localhost:5000/booked`;
+            const url = `https://stark-bayou-71570.herokuapp.com/booked`;
 
             fetch(url, {
                 method: 'PUT',
@@ -77,6 +78,8 @@ const SingleTool = () => {
                     if (data.success) {
                         toast(`${name} is booked`);
                         refetch();
+                        navigate('/dashboard/myOrder')
+
                     }
                     else {
                         toast.error(`something went wrong. Please try again`);
@@ -150,12 +153,12 @@ const SingleTool = () => {
                     <input disabled = {(disable) }  type="submit" value="Purchase" className="btn btn-primary w-full max-w-xs text-lg font-bold" />
                 </form>
             </div>
-            <div class="card-body  lg:w-1/3 grow-0 items-center">
-                <h2 className="card-title text-accent text-3xl">{name}</h2>
-                <p className='text-primary text-2xl font-black'>Price: {price} per unit</p>
-                <p className='text-accent text-2xl font-bold'>Available: {availableQuantity}</p>
-                <p className='text-accent text-2xl font-bold'>Minimum Quantity: {minimumQuantity}</p>
-                <p className='text-accent text-2xl font-bold'>Description: {description}</p>
+            <div class="card-body flex justify-center items-center lg:w-1/3  ">
+                <h2 className="card-title grow-0 text-accent text-3xl">{name}</h2> 
+                <p className='text-primary grow-0 text-2xl font-black'>Price: {price} per unit</p><hr />
+                <p className='text-accent grow-0 text-2xl font-bold'>Available: {availableQuantity}</p><hr />
+                <p className='text-accent grow-0 text-2xl font-bold'>Minimum Quantity: {minimumQuantity}</p><hr />
+                <p className='text-accent grow-0 text-2xl font-bold'>Description: {description}</p>
             </div>
 
         </div>
