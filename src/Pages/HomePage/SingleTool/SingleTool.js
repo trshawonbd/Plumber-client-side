@@ -164,11 +164,11 @@ const SingleTool = () => {
                 </form>
             </div>
             <div class="card-body flex justify-center items-center lg:w-1/3  ">
-                <h2 className="card-title grow-0 text-accent text-3xl">{name}</h2>
-                <p className='text-primary grow-0 text-2xl font-black'>Price: {price} per unit</p><hr />
-                <p className='text-accent grow-0 text-2xl font-bold'>Available: {availableQuantity}</p><hr />
-                <p className='text-accent grow-0 text-2xl font-bold'>Minimum Quantity: {minimumQuantity}</p><hr />
-                <p className='text-accent grow-0 text-2xl font-bold'>Description: {description}</p>
+                <h2 className="card-title grow-0 text-secondary text-3xl">{name}</h2>
+                <p className='text-secondary grow-0 text-2xl font-black'>Price: {price} per unit</p><hr />
+                <p className='text-secondary grow-0 text-2xl font-bold'>Available: {availableQuantity}</p><hr />
+                <p className='text-secondary grow-0 text-2xl font-bold'>Minimum Quantity: {minimumQuantity}</p><hr />
+                <p className='text-secondary grow-0 text-2xl font-bold'>Description: {description}</p>
             </div>
 
         </div>
