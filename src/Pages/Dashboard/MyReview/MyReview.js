@@ -67,7 +67,7 @@ const MyReview = () => {
 
 
     return (
-        <div className='flex justify-center flex-col items-center bg-purple-100  p-6 rounded'>
+        <div className='flex justify-center flex-col items-center  p-6 rounded'>
             <h2 className='text-center text-5xl font-black my-16'>Please Provide your Review</h2>
 
             <form  onSubmit={handleSubmit(onSubmit)}>
@@ -164,7 +164,7 @@ const MyReview = () => {
                     </label>
                 </div>
 
-                <input className='btn w-full max-w-xs btn-secondary mt-5' type="submit" value='Post your review' />
+                <input className='btn w-full max-w-xs btn-primary mt-5' type="submit" value='Post your review' />
             </form>
 
         </div>

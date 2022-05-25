@@ -107,7 +107,7 @@ const SingleTool = () => {
     return (
 
 
-        <div class="card m-12 w-100  lg:card-side bg-purple-100 ">
+        <div class="card m-12 w-100  lg:card-side  ">
             <figure className=''><img className='w-96 ' src={picture} alt="Album" /></figure>
             <div class="card-body  lg:w-1/3">
                 <h2 className="card-title text-primary justify-center mb-6 text-3xl">Purchase Information</h2>

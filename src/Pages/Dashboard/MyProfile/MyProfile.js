@@ -37,7 +37,7 @@ const MyProfile = () => {
             {
 
             }
-            <div class="card bg-purple-100 my-12 w-full  items-center ">
+            <div class="card  my-12 w-full  items-center ">
                 {
                     picture ? <figure className='mt-6'>
                         <div class="avatar">
@@ -91,7 +91,7 @@ const MyProfile = () => {
                     <div class="divider"></div>
 
                     <div class="card-actions justify-center">
-                        <label onClick={() => setUpdtaing(allUsers)} for="confirm-modal" class="btn btn-error btn-md">Update Information</label>
+                        <label onClick={() => setUpdtaing(allUsers)} for="confirm-modal" class="btn btn-primary btn-md">Update Information</label>
                         {/* <button class="btn btn-outline">Products</button> */}
                     </div>
                 </div>

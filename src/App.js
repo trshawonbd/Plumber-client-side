@@ -23,11 +23,17 @@ import ManageProducts from './Pages/Dashboard/ManageAllProducts/ManageProducts/M
 import Footer from './Pages/Shared/Footer/Footer';
 import Blog from './Pages/Blog/Blog';
 import MyPortfolio from './Pages/MyPortfolio/MyPortfolio';
+import { useState } from 'react';
 
 function App() {
+  const [dark, setDark] = useState(false);
+  
   return (
-    <div >
-      <NavBar></NavBar>
+    <div data-theme={dark ? "light" : "dark"}>
+      <NavBar 
+      dark={dark}
+      setDark={setDark}
+      ></NavBar>
       <Routes>
       <Route path="/" element={<Home></Home>} />
       <Route path="/singleTool/:id" element={<RequireAuth>
