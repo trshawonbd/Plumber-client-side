@@ -66,9 +66,9 @@ const MyPortfolio = () => {
                             <div>
                             <span className='font-bold'>Projects:</span> <br />
                             <div className='mt-3'>
-                            <a role="button" href='https://plumber-26cab.web.app/' class="btn mr-2">Plumber</a>
-                            <a role="button" href='https://i-house-7d97b.web.app/' class="btn mr-2">i-house</a>
-                            <a role="button" href='https://your-photographer.web.app/' class="btn mr-2">Your PhotoGrapher</a>
+                            <a role="button" href='https://plumber-26cab.web.app/' class="btn md:my-2 mr-2">Plumber</a>
+                            <a role="button" href='https://i-house-7d97b.web.app/' class="btn md:my-2 mr-2">i-house</a>
+                            <a role="button" href='https://your-photographer.web.app/' class="btn md:my-2 mr-2">Your PhotoGrapher</a>
                             </div>
 
                             </div>

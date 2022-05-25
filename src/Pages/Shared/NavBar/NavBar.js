@@ -53,9 +53,9 @@ const NavBar = () => {
             </div>
             {
                 user ? <div className="navbar-end">
-                    <a className="btn btn-sm">{user?.displayName}</a>
+                    <a className="btn btn-xs">{user?.displayName}</a>
                 </div> : <div className="navbar-end">
-                    <a className="btn btn-sm">Getting Started</a>
+                    <a className="btn btn-xs"> Started</a>
                 </div>
             }
 
