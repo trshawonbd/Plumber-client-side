@@ -164,7 +164,7 @@ const MyReview = () => {
                     </label>
                 </div>
 
-                <input className='btn w-full max-w-xs btn-secondary mt-5' type="submit" value='Add Tool' />
+                <input className='btn w-full max-w-xs btn-secondary mt-5' type="submit" value='Post your review' />
             </form>
 
         </div>
