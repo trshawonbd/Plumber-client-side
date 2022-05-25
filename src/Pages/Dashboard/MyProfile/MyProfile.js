@@ -62,7 +62,7 @@ const MyProfile = () => {
                 <div class="divider"></div>
                 <div class="card-body w-full items-center">
                     <h2 class="card-title">
-                        Name: {name}
+                        Name: {user.displayName}
                     </h2>
                     <div class="divider"></div>
                     <h2 class="card-title">
