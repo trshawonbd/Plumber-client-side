@@ -15,7 +15,7 @@ On the Othere Hand Admin Panel is also developed for this manufacturing company.
 
 [:love_you_gesture:] Client can easily see the homepage. \
  [:love_you_gesture:] Client can easily create an account in the website. \
-  [:love_you_gesture:] Client can easily purchase any product as much as he/she wants but make sure the items must be in between available quantity and minimum purchase quantity. \
+  - Client can easily purchase any product as much as he/she wants but make sure the items must be in between available quantity and minimum purchase quantity. \
    [:love_you_gesture:] Client can pay their for their order by credit or debit card with a secure      payment network.\
     [:love_you_gesture:] Client can remove their unpaid items which are added in the order list. \
      [:love_you_gesture:] Client can easily write a review from his/her dashboard menu (make sure   he/ she is logged in) and the review will display in the review section in homepage. \
