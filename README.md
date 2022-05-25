@@ -25,6 +25,7 @@ On the Othere Hand Admin Panel is also developed for this manufacturing company.
 ### `Features for Admin`
 
 > Must have an admin account. Otherwise, system will treat you as a normal customer
+> admin account: `email:test@plumber.com` `password:testtest` 
 
 - Admin can easily see the homepage.
 - Admin can easily create an account in the website.
