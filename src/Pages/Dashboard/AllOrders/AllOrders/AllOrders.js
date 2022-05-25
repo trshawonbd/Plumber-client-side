@@ -85,7 +85,9 @@ const AllOrders = () => {
                             <td>{order.quantity}</td>
                             <td>{order.price}</td>
                             <td>{order.total}</td>
-                            <td><button onClick={() => handleStatus(order._id)} className='btn btn-xs btn-primary'>{order.status}</button></td>
+                            <td>{(order.price && !order.paid) ? <button disabled onClick={() => handleStatus(order._id)} className='btn btn-xs btn-primary'>{order.status}</button> : 
+                                
+                                <button onClick={() => handleStatus(order._id)} className='btn btn-xs btn-primary'>{order.status}</button>}</td>
                             <td>{(order.price && !order.paid) && <Link to={`/dashboard/payment/${order._id}`}  >
                                 <button className='btn btn-xs btn-accent'>Unpaid</button>
                             </Link>}

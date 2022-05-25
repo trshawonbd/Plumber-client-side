@@ -7,7 +7,7 @@ const DeleteModal = ({deleting, refetch, setDeleting}) => {
     console.log("deleting", deleting)
 
     const handleDelete = () => {
-        fetch(`https://stark-bayou-71570.herokuapp.com/admin/user/${email}`, {
+        fetch(`https://stark-bayou-71570.herokuapp.com/user/${email}`, {
             method: "DELETE",
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

@@ -65,7 +65,7 @@ function App() {
 
 
 
-      <ToastContainer></ToastContainer>
+      <ToastContainer theme='colored'></ToastContainer>
     </div>
   );
 }
