@@ -43,29 +43,6 @@ const MyOrder = () => {
        return <Loading></Loading>
    }
 
- /*    useEffect(() => {
-         if (user) {
-            fetch(`https://stark-bayou-71570.herokuapp.com/booked?email=${user.email}`, {
-                method: 'GET',
-                 headers: {
-                    'authorization': `Bearer ${localStorage.getItem('accessToken')}`
-                } 
-            })
-                .then(res => {
-                     if (res.status === 401 || res.status === 403) {
-                        signOut(auth);
-                        localStorage.removeItem('accessToken');
-                        navigate('/');
-
-                    } 
-
-                    return res.json()
-                })
-                .then(data => {
-                    setOrders(data)
-                });
-        } 
-    }, [user, navigate])  */
     return (
         <div class="overflow-x-auto">
             <table class="table shadow-2xl w-full">
